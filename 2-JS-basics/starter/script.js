@@ -170,6 +170,7 @@ if (age < 13) {
 */
 
 // Ternary operators
+/*
 var firstName = 'John';
 var age = 16;
 
@@ -207,3 +208,178 @@ switch (true) {
     default:
         console.log(firstName + ' is a man.');
 }
+*/
+
+/*****************************
+* Truthy and falsy values and equality operators
+*/
+
+// Falsy values: udefined, null, 0, '', NaN
+// Truthy values: NOT falsy values
+
+/*****************************
+* Coding challenge 2
+*/
+/*
+var johnFirstScore = 89;
+var johnSecondScore = 120;
+var johnThirdScore = 103;
+
+var MikeFirstScore = 116;
+var MikeSecondScore = 97;
+var MikeThirdScore = 123;
+
+var MaryFirstScore = 97;
+var MarySecondScore = 134;
+var MaryThirdScore = 105;
+
+var johnAverageScore = (johnFirstScore + johnSecondScore + johnThirdScore) / 3;
+var MikeAverageScore = (MikeFirstScore + MikeSecondScore + MikeThirdScore) / 3;
+var MaryAverageScore = (MaryFirstScore + MarySecondScore + MaryThirdScore) / 3;
+
+console.log(johnAverageScore);
+console.log(MikeAverageScore);
+console.log(MaryAverageScore);
+
+if (johnAverageScore > MikeAverageScore && johnAverageScore > MaryAverageScore) {
+    console.log('John team has highest average score');
+} else if (johnAverageScore < MikeAverageScore && MikeAverageScore > MaryAverageScore) {
+    console.log('Mike team has highest average score');
+} else if (johnAverageScore < MaryAverageScore && MikeAverageScore < MaryAverageScore) {
+    console.log('Mary team has highest average score');
+}else {
+    console.log('Both team has same average score');
+}
+*/
+
+/*****************************
+* Function
+*/
+/*
+function calculateAge (birthYear) {
+    return 2018 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+
+console.log(ageJohn, ageMike, ageJane);
+
+function yearsUntilRetirement(year, firstName) {
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(firstName + ' retires in ' + retirement + ' years');
+    } else {
+        console.log(firstName + ' is already retired.');
+    }
+
+    
+}
+
+yearsUntilRetirement(1990, 'John');
+yearsUntilRetirement(1948, 'Mike');
+yearsUntilRetirement(1969, 'Jane');
+*/
+
+/*****************************
+* Function Statements and Expression
+*/
+
+// Function declaration
+// function whatDoYouDo(job, firstName) {}
+/*
+// Function Expression
+var whatDoYouDo = function (job, firstName) {
+    switch(job) {
+        case 'teacher':
+            return firstName + ' theaches kids how to code'
+        case 'driver':
+            return firstName + ' drives a car in Lisabone'
+        case 'designer':
+            return firstName + ' designs beautiful websites'
+        default:
+            return firstName + ' does something else'
+    }
+}
+
+console.log( whatDoYouDo('teacher', 'John'));
+console.log( whatDoYouDo('designer', 'Jane'));
+console.log( whatDoYouDo('driver', 'Mike'));
+console.log( whatDoYouDo('retired', 'Alfred'));
+*/
+
+
+/*****************************
+* Arrays
+*/
+/*
+var names = ['John', 'Mark', 'jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[0]);
+console.log(names);
+console.log(names.length);
+
+// Mutate array data
+names[1] = 'Ben';
+names[5] = 'Mary';
+console.log(names);
+
+// Different data types
+var John = ['John', 'Smith', 1990, 'teacher', false];
+
+John.push('blue');
+John.unshift('Mr.');
+
+John.pop();
+John.shift();
+console.log(John);
+
+console.log(John.indexOf(1990));
+console.log(John.indexOf(23));
+
+var isDesigner = John.indexOf('designer') === -1 ? 'John is Not a designer' : 'John is a designer';
+console.log(isDesigner);
+*/
+
+/*****************************
+* Coding challenge 3
+*/
+
+function Howtip(bill) {
+    var tip;
+    if(bill < 50){
+        tip = bill * 0.2
+    } else if (bill >= 50 && bill < 200) {
+        tip = bill * 0.15
+    } else if (bill >= 200) {
+        tip =+bill * 0.1
+    }
+
+    return tip;
+}
+
+function billWithTip(bill, tip) {
+    var allSumm = bill + tip;
+    return allSumm;
+}
+
+var billsArray = [];
+
+billsArray.push(Howtip(124));
+billsArray.push(Howtip(48));
+billsArray.push(Howtip(268));
+
+console.log(billsArray);
+
+var billsWithTipsArray = [];
+
+billsWithTipsArray.push(billWithTip(124, 18.59));
+billsWithTipsArray.push(billWithTip(48, 9.6));
+billsWithTipsArray.push(billWithTip(268, 26.8));
+
+console.log(billsWithTipsArray);
+
