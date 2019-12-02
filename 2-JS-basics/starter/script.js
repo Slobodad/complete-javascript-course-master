@@ -349,6 +349,7 @@ console.log(isDesigner);
 * Coding challenge 3
 */
 
+/*
 function Howtip(bill) {
     var tip;
     if(bill < 50){
@@ -356,30 +357,131 @@ function Howtip(bill) {
     } else if (bill >= 50 && bill < 200) {
         tip = bill * 0.15
     } else if (bill >= 200) {
-        tip =+bill * 0.1
+        tip = bill * 0.1
     }
 
     return tip;
 }
 
-function billWithTip(bill, tip) {
-    var allSumm = bill + tip;
-    return allSumm;
+var billArray = [124, 48, 268];
+
+var tipArray = [
+    Howtip(billArray[0]),
+    Howtip(billArray[1]),
+    Howtip(billArray[2])
+];
+
+var billsWithTipsArray = [
+    billArray[0] + tipArray[0],
+    billArray[1] + tipArray[1],
+    billArray[2] + tipArray[2],
+];
+
+console.log(tipArray, billsWithTipsArray);
+*/
+
+/*****************************
+* Objects and properties
+*/
+
+/*
+// Objects literal
+var john = {
+    firstName: 'john',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+};
+
+console.log(john);
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear'
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+
+console.log(john);
+
+// new Object syntax
+var jane = new Object();
+jane.name = 'Jane';
+jane.birthYear = 1969;
+jane[lastName] = 'Smith';
+*/
+
+/*****************************
+* Objects and methods
+*/
+
+/*
+var john = {
+    firstName: 'john',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calclAge: function(birthYear) {
+        return 2018 - birthYear;
+    }
+};
+
+console.log(john.calcAge(1990));
+*/
+/*
+var john = {
+    firstName: 'john',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function() {
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+
+console.log(john);
+*/
+
+/*****************************
+* Coding challenge 4
+*/
+
+var john = {
+    mass: 90,
+    height: 1.85,
+    calcBmi: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi
+    }
 }
 
-var billsArray = [];
+john.calcBmi();
 
-billsArray.push(Howtip(124));
-billsArray.push(Howtip(48));
-billsArray.push(Howtip(268));
+var marck = {
+    mass: 80,
+    height: 1.75,
+    calcBmi: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi
+    }
+}
 
-console.log(billsArray);
+marck.calcBmi();
 
-var billsWithTipsArray = [];
+if (john.bmi > marck.bmi) {
+    console.log('John BMI higer then Mark.');
+} else if (marck.bmi > john.bmi) {
+    console.log('Marck BMI higer then John.');
+} else {
+    console.log('They BMI sre equal');
+}
 
-billsWithTipsArray.push(billWithTip(124, 18.59));
-billsWithTipsArray.push(billWithTip(48, 9.6));
-billsWithTipsArray.push(billWithTip(268, 26.8));
-
-console.log(billsWithTipsArray);
-
+console.log(john, marck);
