@@ -454,6 +454,7 @@ console.log(john);
 * Coding challenge 4
 */
 
+/*
 var john = {
     mass: 90,
     height: 1.85,
@@ -485,3 +486,67 @@ if (john.bmi > marck.bmi) {
 }
 
 console.log(john, marck);
+*/
+
+/*****************************
+* Coding challenge 5
+*/
+
+var johnPaid = {
+    bills: [124, 48, 268, 180, 42],
+    tips: [],
+    finalPaid: [],
+}
+
+for (i = 0; johnPaid.bills.length > i; i++) {
+    if(johnPaid.bills[i] < 50) {
+        tip = johnPaid.bills[i] * .2;
+    } else if (johnPaid.bills[i] >= 50 && johnPaid.bills[i] < 200) {
+        tip = johnPaid.bills[i] * .15;
+    } else {
+        tip = johnPaid.bills[i] * .1;
+    }
+
+    johnPaid.tips.push(tip);
+    johnPaid.finalPaid.push(tip+johnPaid.bills[i]);
+};
+
+
+console.log(johnPaid.bills);
+console.log(johnPaid.tips);
+console.log(johnPaid.finalPaid);
+
+
+var marckPaid = {
+    bills: [77, 375, 110, 45],
+    tips: [],
+    finalPaid: [],
+    calcTip: function() {
+        for (i = 0; this.bills.length > i; i++) {
+            if(this.bills[i] < 100) {
+                tip = this.bills[i] * .2;
+            } else if (this.bills[i] >= 100 && this.bills[i] < 300) {
+                tip = this.bills[i] * .1;
+            } else {
+                tip = this.bills[i] * .25;
+            }
+
+            this.tips.push(tip);
+            this.finalPaid.push(tip+this.bills[i]); 
+        }
+    }
+}
+
+marckPaid.calcTip();
+
+console.log(marckPaid.bills);
+console.log(marckPaid.tips);
+console.log(marckPaid.finalPaid);
+
+
+
+
+
+
+
+
